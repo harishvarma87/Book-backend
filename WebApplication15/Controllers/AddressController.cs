@@ -18,14 +18,14 @@ namespace WebApplication15.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult GetAll()
+        public IHttpActionResult Get()
         {
             var data = repository.GetAllAddresses();
             return Ok(data);
         }
 
         [HttpGet]
-        public IHttpActionResult GetById(int id)
+        public IHttpActionResult Get(int id)
         {
             var data = repository.GetAddressByUser(id);
             return Ok(data);
