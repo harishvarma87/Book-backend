@@ -18,7 +18,7 @@ namespace WebApplication15.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult GetAll()
+        public IHttpActionResult Get()
         {
             var data = repository.GetCart();
             return Ok(data);
