@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -82,27 +82,7 @@ namespace WebApplication15.Models
         }
 
         
-        public Orders GetOrderById(int id)
-        {
-            comm.CommandText = "select * from Orders where OrderId=" + id;
-            comm.Connection = conn;
-            conn.Open();
-            SqlDataReader reader = comm.ExecuteReader();
-            while (reader.Read())
-            {
-                int orderid = Convert.ToInt32(reader["OrderId"]);
-                int userId = Convert.ToInt32(reader["UserId"]);
-                int bookId = Convert.ToInt32(reader["BookId"]);
-                int quantity = Convert.ToInt32(reader["Quantity"]);
-                int addressId = Convert.ToInt32(reader["AddressId"]);
-                string date = reader["Date"].ToString();
-                Orders cat = new Orders(orderid, userId, bookId, quantity, addressId, date);
-                return cat;
-
-            }
-            conn.Close();
-            return null;
-        }
+        
 
         public void UpdateOrder(Orders order)
         {
