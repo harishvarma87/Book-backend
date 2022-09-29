@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -18,9 +18,15 @@ namespace WebApplication15.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult GetAll()
+        public IHttpActionResult Get()
         {
             var data = repository.GetOrder();
+            return Ok(data);
+        }
+        [HttpGet]
+        public IHttpActionResult Get(int id)
+        {
+            var data = repository.GetOrderById(id);
             return Ok(data);
         }
 
